@@ -120,3 +120,27 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Deployment
+
+This project is configured for static deployment on both **Vercel** and **Netlify**.
+
+- Install command: `npm ci`
+- Build command: `npm run build`
+- Output directory: `dist`
+
+### Vercel
+
+1. Import `nihal29055/aqua-purity-project` in Vercel.
+2. Keep the default branch as the deployment branch.
+3. Build/output settings are already configured in `/home/runner/work/aqua-purity-project/aqua-purity-project/vercel.json`.
+
+### Netlify
+
+1. Import `nihal29055/aqua-purity-project` in Netlify.
+2. Keep the default branch as the deployment branch.
+3. Build/publish settings and SPA fallback are configured in `/home/runner/work/aqua-purity-project/aqua-purity-project/netlify.toml`.
+
+### SPA fallback
+
+Client-side routing fallback to `/index.html` is included for both platforms so all routes resolve correctly.
