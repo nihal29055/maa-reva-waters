@@ -207,3 +207,63 @@
 @utility animate-soft-pulse {
   animation: soft-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-fast {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@utility animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@utility animate-float-fast {
+  animation: float-fast 4.8s ease-in-out infinite;
+}
+
+@keyframes pan-slow {
+  0% {
+    transform: translateX(0) scale(1.04);
+  }
+  50% {
+    transform: translateX(20px) scale(1.08);
+  }
+  100% {
+    transform: translateX(0) scale(1.04);
+  }
+}
+
+@keyframes pan-reverse {
+  0% {
+    transform: translateX(0) scale(1.04);
+  }
+  50% {
+    transform: translateX(-18px) scale(1.08);
+  }
+  100% {
+    transform: translateX(0) scale(1.04);
+  }
+}
+
+@utility animate-pan-slow {
+  animation: pan-slow 14s ease-in-out infinite;
+}
+
+@utility animate-pan-reverse {
+  animation: pan-reverse 16s ease-in-out infinite;
+}
