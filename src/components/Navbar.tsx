@@ -87,8 +87,8 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className="ml-auto rounded-lg p-2 text-brand-navy transition-all duration-300 hover:bg-brand-soft lg:hidden"
         >
-          {open ? <Menu className="size-6 hidden" /> : null}
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
+
         </button>
       </nav>
 
