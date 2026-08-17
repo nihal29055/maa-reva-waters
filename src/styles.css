@@ -160,3 +160,50 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.15;
+  }
+}
+
+@keyframes wave-drift {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-wave-slow {
+  animation: wave-drift 20s ease-in-out infinite;
+}
+
+@utility animate-wave-fast {
+  animation: wave-drift 14s ease-in-out infinite;
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--whatsapp) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 14px transparent;
+  }
+}
+
+@utility animate-soft-pulse {
+  animation: soft-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
