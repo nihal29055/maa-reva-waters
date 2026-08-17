@@ -23,6 +23,8 @@ function Wave({ className, opacity }: { className: string; opacity: number }) {
 export function Hero() {
   const explore = () =>
     document.querySelector("#products")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const checkDelivery = () =>
+    document.querySelector("#delivery-check")?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <section
@@ -77,6 +79,13 @@ export function Hero() {
             Explore Products
           </button>
         </div>
+        <button
+          type="button"
+          onClick={checkDelivery}
+          className="mt-5 text-sm font-semibold text-brand-foreground/90 underline decoration-white/60 underline-offset-4 transition-all duration-300 hover:text-brand-foreground"
+        >
+          Check delivery in your area
+        </button>
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[70px] overflow-hidden sm:h-[110px]">

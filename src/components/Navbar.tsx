@@ -50,7 +50,7 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="ml-auto hidden items-center gap-7 lg:flex">
+        <div className="ml-auto hidden items-center gap-7 md:flex">
           {LINKS.map((l) => (
             <a
               key={l.href}
@@ -85,7 +85,7 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="ml-auto rounded-lg p-2 text-brand-navy transition-all duration-300 hover:bg-brand-soft lg:hidden"
+          className="ml-auto rounded-lg p-2 text-brand-navy transition-all duration-300 hover:bg-brand-soft md:hidden"
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
 
@@ -93,7 +93,7 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-border bg-background px-4 pb-5 pt-3 shadow-lg lg:hidden">
+        <div className="animate-in slide-in-from-top-2 border-t border-border bg-background px-4 pb-5 pt-3 shadow-lg duration-300 md:hidden">
           <div className="flex flex-col gap-1">
             {LINKS.map((l) => (
               <a

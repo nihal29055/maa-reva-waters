@@ -25,8 +25,8 @@ import {
 /**
  * EmailJS credentials — replace these placeholders with the real values from
  * your EmailJS dashboard (Email Services → Service ID, Email Templates →
- * Template ID, Account → Public Key). Until then the form validates and shows
- * the success state, but no email is actually delivered.
+ * Template ID, Account → Public Key). Submissions are sent with emailjs.send()
+ * and require valid credentials to deliver.
  */
 const EMAILJS_SERVICE_ID = "SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "TEMPLATE_ID";
@@ -64,9 +64,8 @@ export function ContactFooter() {
         { publicKey: EMAILJS_PUBLIC_KEY },
       );
       setSent(true);
-    } catch {
-      // Placeholder credentials will land here; still confirm to the visitor
-      // that we have their enquiry so the UI stays usable before setup.
+    } catch (sendError) {
+      console.error(sendError);
       setError("We couldn't send that automatically. Please call or WhatsApp us instead.");
     } finally {
       setSending(false);
@@ -168,7 +167,7 @@ export function ContactFooter() {
           </div>
 
           <div className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 sm:p-8">
-            <form onSubmit={checkPincode} className="mb-8">
+            <form id="delivery-check" onSubmit={checkPincode} className="mb-8">
               <label htmlFor="pincode" className="block text-sm font-semibold">
                 Check delivery in your area
               </label>
